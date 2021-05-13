@@ -31,6 +31,7 @@ Para que coincida con el nombre del _docker-compose.yml_, el nombre debe ser "_p
       - El servidor web utilizará el puerto **8080**. 
       - PHPMyAdmin utilizará el puerto **8082**.
       - El nombre del servidor para ingresar en __PHPMyAdmin__ será __mysql__.
+      - Para servir tus propias páginas simplemente tienes que meterlas en el directorio _code_.
 
 6. Para pararlo simplemente hay que hacer *Ctrl + C* si no lo hemos iniciado en segundo plano. Si queremos detener el proceso en segundo plano sería desde el directorio **PHyGinx** ejecutando:
 
