@@ -1,0 +1,45 @@
+#Configuración Nginx
+web:
+  image: nginx:latest
+  ports:
+      - "8080:80"
+  volumes:
+      - ./code:/code
+      - ./site.conf:/etc/nginx/conf.d/site.conf       
+  links:
+    - php      
+#Configuración php
+php:
+  image: php_con_mysqli
+  volumes:
+      - ./code:/code
+  links:
+    - db
+#MySQL
+
+db:
+  image: mysql:latest
+  container_name: Servidor_MySQL
+  hostname: mysql
+  volumes:
+      - /opt/mysql:/var/lib/mysql
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_DATABASE: 'usuarios'
+    MYSQL_USER: 'raul'
+    MYSQL_PASSWORD: 'pedo'
+    MYSQL_ROOT_PASSWORD: 'raul'
+  
+#PhpMyAdmin
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+    - "8082:80"
+  environment:
+    PMA_ARBITRARY: 1
+  links:
+    - db
+
+      
+      
