@@ -38,7 +38,7 @@ Para que coincida con el nombre del _docker-compose.yml_, el nombre debe ser "_p
 
 7. Si queremos eliminar los contenedores que hemos creado al levantar el docker-compose, ejecutaremos:
 
-                  docker-compose stop
+                  docker-compose down
 
 
 
