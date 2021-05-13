@@ -14,8 +14,8 @@ Instrucciones:
 ### Observaciones: 
 - Para cambiar el nombre del servidor:
 
-    1.Ir a la carpeta principal, configurar el archivo *site.conf* y cambiar la directiva servername.
-    2.Ir a /etc/hosts y añadir el nombre que hayas puesto como nombre del servidor.
+    - 1.Ir a la carpeta principal, configurar el archivo *site.conf* y cambiar la directiva servername.
+    - 2.Ir a /etc/hosts y añadir el nombre que hayas puesto como nombre del servidor.
     
 - Para cambiar los puertos por si ya tenemos alguno en uso, se mapean desde el docker-compose.yml en la sección puertos de cada servicio. Por ejemplo:
 
@@ -23,7 +23,7 @@ Instrucciones:
           image: nginx:latest
           ports:
               - "8080:80"
-            ( - "puerto_host:puerto:contenedor" )
+            ( - "puerto_host:puerto_contenedor" )
 
 
 
