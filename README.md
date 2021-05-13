@@ -1,11 +1,22 @@
-# Proyecto
+# Proyecto final 
+## Stack LEMP basado en docker-compose
 Proyecto de fin de grado 
 Consiste en el despliegue de un stack LEMP (Servidor Nginx, MySQL, PHP y PHPMyAdmin para linux) totalmente funcional mediante docker-compose.
 
 Instrucciones:
+
 1. Clonar el repositorio en tu máquina Linux
 2. Ir a la carpeta eneginx/imagenes/php y crear la imagen de php con "docker build -t nombre_imagen . ".
 3. Ir al directorio principal y ejecutar "docker-compose up".
 4. Ya estaría levantado todo el servidor.
 
-Para cambiar los puertos por si ya tenemos alguno en uso, se haría desde el docker-compose.yml en la sección puertos (puerto_host:puerto_contenedor)
+
+### Observaciones: 
+- Para cambiar el nombre del servidor:
+    1.Ir a la carpeta principal, configurar el archivo *site.conf* y cambiar la directiva servername.
+    2.Ir a /etc/hosts y añadir el nombre que hayas puesto como nombre del servidor.
+    
+- Para cambiar los puertos por si ya tenemos alguno en uso, se haría desde el docker-compose.yml en la sección puertos (puerto_host:puerto_contenedor).
+  Hay que tener cuidado con esto, porque si no va a dar un error bastante grave y no funcionará.
+  
+- Para introducir registros en la base de datos habría que ir a phpmyadmin, cuando incias todo está vacío.
