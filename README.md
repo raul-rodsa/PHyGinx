@@ -1,4 +1,4 @@
-# Proyecto final - PhyGinx
+# Proyecto final - PHyGinx
 ## Stack LEMP basado en docker-compose
 Proyecto de fin de grado.
 Consiste en el despliegue de un stack LEMP (Servidor Nginx, MySQL, PHP y PHPMyAdmin para linux) totalmente funcional desde el minuto 1 mediante docker-compose.
@@ -6,7 +6,7 @@ Consiste en el despliegue de un stack LEMP (Servidor Nginx, MySQL, PHP y PHPMyAd
 Instrucciones:
 
 1. Clonar el repositorio en tu máquina Linux
-2. Ir a la carpeta PhyGinx/imagenes/php y crear la imagen de php con:
+2. Ir a la carpeta PHyGinx/imagenes/php y crear la imagen de php con:
 
          docker build -t nombre_imagen . 
          
@@ -35,4 +35,4 @@ Instrucciones:
 
   Hay que tener cuidado con esto, porque si no va a dar un error bastante grave y no funcionará.
   
-- Para introducir registros en la base de datos habría que ir a phpmyadmin, cuando cuando levantas PhyGinx por primera vez todo está vacío.
+- Para introducir registros en la base de datos habría que ir a phpmyadmin, cuando cuando levantas PHyGinx por primera vez todo está vacío.
