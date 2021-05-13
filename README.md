@@ -1,7 +1,7 @@
 # Proyecto final - PhyGinx
 ## Stack LEMP basado en docker-compose
-Proyecto de fin de grado 
-Consiste en el despliegue de un stack LEMP (Servidor Nginx, MySQL, PHP y PHPMyAdmin para linux) totalmente funcional mediante docker-compose.
+Proyecto de fin de grado.
+Consiste en el despliegue de un stack LEMP (Servidor Nginx, MySQL, PHP y PHPMyAdmin para linux) totalmente funcional desde el minuto 1 mediante docker-compose.
 
 Instrucciones:
 
