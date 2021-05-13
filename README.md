@@ -45,8 +45,8 @@ Para que coincida con el nombre del _docker-compose.yml_, el nombre debe ser "_p
 ### Observaciones: 
 - Para cambiar el nombre del servidor:
 
-    1. Ir a la carpeta principal, configurar el archivo *site.conf* y cambiar la directiva servername.
-    2. Después ir a /etc/hosts y añadir el nombre que hayas puesto como nombre del servidor.
+    1. Ir al directorio __PHyGinx__, configurar el archivo *site.conf* y cambiar la directiva _server_name_.
+    2. Después ir a _/etc/hosts_ y añadir el nombre que hayas puesto como nombre del servidor.
     
 - Para cambiar los puertos por si ya tenemos alguno en uso, se mapean desde el docker-compose.yml en la sección puertos de cada servicio. Por ejemplo:
 
@@ -58,8 +58,8 @@ Para que coincida con el nombre del _docker-compose.yml_, el nombre debe ser "_p
 
 
 
-  Hay que tener cuidado con esto, porque si no va a dar un error bastante grave y no funcionará.
+  Hay que tener cuidado con esto, porque si no, va a darnos un error bastante grave y no funcionará.
  
 
-- Para introducir registros en la base de datos habría que ir a phpmyadmin, cuando cuando levantas PHyGinx por primera vez todo está vacío.
+- Para introducir registros en la base de datos habría que ir a _PHPMyADMIN_, cuando cuando levantas PHyGinx por primera vez todo está vacío.
 
