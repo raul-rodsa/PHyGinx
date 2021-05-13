@@ -1,6 +1,7 @@
 #Configuración Nginx
 web:
   image: nginx:latest
+  container_name: Servidor_Nginx
   ports:
       - "8080:80"
   volumes:
@@ -10,6 +11,7 @@ web:
     - php      
 #Configuración php
 php:
+  container_name: Servidor_PHP
   image: php_con_mysqli
   volumes:
       - ./code:/code
@@ -34,6 +36,7 @@ db:
 #PhpMyAdmin
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
+  container_name: Servidor_PHPMyAdmin
   ports:
     - "8082:80"
   environment:
