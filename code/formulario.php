@@ -12,7 +12,7 @@
 <div><form action="datos.php" method="POST">
 <table>
     <tr><th>Nombre: </th><td><input type="text" name="nombre1"></td></tr>
-    <tr><th>Contraseña: </th><td><input type="password" name="contra"></td></tr>
+    <tr><th>Contraseña: </th><td><input type="password" name="contra"></td></tr><br/>
     <tr><td><input type="submit" value="Verificar"></td></tr>
 
 </table>
