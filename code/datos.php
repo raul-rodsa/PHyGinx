@@ -3,7 +3,7 @@
     <title>Formulario de verificacion</title>
     <style>
         body {
-            background-color: orange;
+            background-color: #FFB15F;
             text-align: center;
         }
         img{
