@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 ?>
 <html>
@@ -29,44 +29,31 @@ $conn = mysqli_connect($servername, $username, $password);
 mysqli_select_db($conn, $database);
 
 //Variables del formulario
-$nombre = $_POST['nombre1'];
+$nombre = $_POST['nombre'];
 $contra = $_POST['contra'];
 
-//Check connection
+/*Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }elseif ($conn){
   echo "Connected successfully <br/>";
-}
+} */
+//Inserción de datos
+
+$insercion= "INSERT INTO gente(nombre, passwd) VALUES ('$nombre','$contra')";
+mysqli_query($conn,$insercion);
+echo "<br/>";
 //Consulta
-
-$consulta= "SELECT * FROM gente where nombre = '$nombre'";
+$consulta ="SELECT * FROM gente WHERE nombre = '$nombre'";
 $resultado = mysqli_query($conn,$consulta);
+$final= mysqli_fetch_assoc($resultado);
 
-//Array asociativo
-$final = mysqli_fetch_assoc($resultado);
-$usuarioDB = $final['nombre'];
-$contraDB = $final['passwd'];
-
-
-
-if($nombre == '' || $contra == ''){
-  echo "Usuario o contraseña incorrectos.<br>";
-  echo "<a href = 'formulario.php'>Volver a intentar</a>";
-  die();
-  
-}elseif ($nombre == $usuarioDB && $contra == $contraDB){
-echo "<h2>Bienvenido $usuarioDB </h2><br/>";
-echo "<img src='imagenes/naruto.gif'>";
+if( $final['nombre']){
+echo "<br/>" .$final['nombre'].  " registrado con éxito";
 }
 
-$_SESSION['usuario'] = $usuarioDB;
+mysqli_close();
 ?>
-<br/><a href="berga.php"> cerrar sesion </a>
-<?php
-
-
-mysqli_close($conn);
-?> 
+<br/><a href = "formulario.php">Volver</a>
 </body>
 </html>
