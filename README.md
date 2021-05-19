@@ -17,7 +17,7 @@ Para que coincida con el nombre del _docker-compose.yml_, el nombre debe ser "_p
         #Para levantarlo en segundo plano:
         docker-compose up -d
         
-4. En la sección de mysql, configurar con las credenciales que elijas las variables de entorno para poder acceder a la base de datos :
+4. En la sección de mysql, dentro de *docker-compose.yml*, configurar con las credenciales que elijas las variables de entorno para poder acceder a la base de datos :
 
          environment:
              MYSQL_DATABASE: 'base_de_datos'
