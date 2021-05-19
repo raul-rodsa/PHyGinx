@@ -25,27 +25,35 @@ session_start();
             
             position:relative;
             margin-top: 20px;
-          
+            margin-left: -200px;
             
             
                 
         }
-        
+        .div2 {
+            position: relative;
+            margin-top: -41px;
+            margin-left: 250px;
+            
+        }
       
     </style>
 </head>
 <body><center>
-<div class="cuadro" ><h2>Introduce tus credenciales</h2>
-<form action="datos.php" method="POST">
+<div class="cuadro" ><h2>Formulario de registro</h2>
+<form action="registro.php" method="POST">
 <table>
-    <tr><th>Nombre: </th><td><input type="text" name="nombre1"></td></tr>
-    <tr><th>Contraseña: </th><td><input type="password" name="contra"></td></tr><br/>
+    <tr><th>Nombre: </th><td><input type="text" name="nombre"></td></tr>
+    <tr><th>Correo electronico: </th><td><input type="text" name="correo"></td></tr>
+    <tr><th>Contrase&ntildea: </th><td><input type="password" name="contra"></td></tr><br/>
+    
 </table>
 
-    <div class="div1"><input type="submit" value="Verificar"></br></div>
+    <div class="div1"><input type="submit" value="Registrarse"></br></div>
     
 </form>
-¿No tienes acceso? <a href="formu_registro.html">Regístrate aquí</a>
-</div></center>
+
+</div>
+</center>
 </body>
 </html>
