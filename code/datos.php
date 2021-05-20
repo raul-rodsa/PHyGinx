@@ -7,15 +7,27 @@ session_start();
     <title>Formulario de verificacion</title>
     <style>
         body {
-            background-color: #DAF7A6;
+            background-color:  #ffef7c ;
             text-align: center;
         }
         img{
           align: center;
           border: solid;
+          border-width:2px;
+          border-radius:20px;
         }
         .titulo{
+          
+            position: relative;
             font-family: sans-serif;
+            background-color: #bdff00;
+            width:50%;
+            margin-left: 25%;
+            margin-bottom:30px;
+            border:solid;
+            border-radius:20px;
+            border-width:2px;
+
         }
         input{
           position:relative;
@@ -23,6 +35,9 @@ session_start();
           background-color:#ff6969;
           border-radius:5px;
           color: white;
+          border:solid;
+          border-color:black;
+          border-width:thin;
 
         }
     </style>
@@ -44,6 +59,7 @@ mysqli_select_db($conn, $database);
 $nombre = $_POST['nombre1'];
 $contra = $_POST['contra'];
 
+
 /*Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
@@ -51,6 +67,8 @@ if (!$conn) {
   echo "Connected successfully <br/>";
 }
 */
+
+
 //Consulta
 
 $consulta= "SELECT * FROM gente where nombre = '$nombre'";
@@ -61,16 +79,21 @@ $final = mysqli_fetch_assoc($resultado);
 $usuarioDB = $final['nombre'];
 $contraDB = $final['passwd'];
 
+//Verifico que la contraseña introducida coincide con el hash
 
+$verificado = password_verify($contra,$contraDB);
+
+//Comprobación del login: 
 
 if($nombre == '' || $contra == ''){
   echo "Usuario o contraseña incorrectos.<br><br/>";
   echo "<a href = 'formulario.php'>Volver a intentar</a>";
   die();
   
-}elseif ($nombre == $usuarioDB && $contra == $contraDB){
+}elseif ($nombre == $usuarioDB && $verificado ){
+
   $_SESSION['usuario'] = $usuarioDB;
-  echo "<div class='titulo'> <h2>Bienvenido $usuarioDB </h2><br/></div>";
+  echo "<div class='titulo'> <h2>Bienvenido $usuarioDB </h2></div>";
 ?>
 
 <img src='imagenes/naruto.gif'>

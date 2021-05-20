@@ -9,7 +9,7 @@ session_start();
     <style>
         body {
             font-family: monospace;
-            background-color: #DAF7A6 ;
+            background-color:  #e7ffa4 ;
             align: center;
         }
         .cuadro {
@@ -17,6 +17,7 @@ session_start();
             position: relative;
             border-width:medium;
             border-style: solid;
+            border-width:thin;
             border-radius: 10px;
             width:50%;
             padding-bottom: 10px;

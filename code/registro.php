@@ -1,5 +1,7 @@
 <?php
-
+if (empty($_POST['nombre']) && empty($_POST['contra'])){
+  header("Location:formulario.php");
+}
 
 ?>
 <html>
@@ -7,7 +9,7 @@
     <title>Formulario de verificacion</title>
     <style>
         body {
-            background-color: #DAF7A6;
+            background-color: #ffef7c ;
             text-align: center;
         }
         img{
@@ -38,9 +40,13 @@ if (!$conn) {
 }elseif ($conn){
   echo "Connected successfully <br/>";
 } */
+
+//Encriptamos la contraseña:
+$hash = password_hash($contra, PASSWORD_BCRYPT);
+
 //Inserción de datos
 
-$insercion= "INSERT INTO gente(nombre, passwd) VALUES ('$nombre','$contra')";
+$insercion= "INSERT INTO gente(nombre, passwd) VALUES ('$nombre','$hash')";
 mysqli_query($conn,$insercion);
 echo "<br/>";
 //Consulta
