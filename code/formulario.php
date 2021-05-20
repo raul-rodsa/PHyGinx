@@ -9,11 +9,11 @@ session_start();
     <style>
         body {
             font-family: monospace;
-            background-color: #FFB15F;
+            background-color: #DAF7A6 ;
             align: center;
         }
         .cuadro {
-            background-color: #ff8a3a;
+            background-color: #9aff50  ;
             position: relative;
             border-width:medium;
             border-style: solid;

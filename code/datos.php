@@ -7,11 +7,23 @@ session_start();
     <title>Formulario de verificacion</title>
     <style>
         body {
-            background-color: #FFB15F;
+            background-color: #DAF7A6;
             text-align: center;
         }
         img{
           align: center;
+          border: solid;
+        }
+        .titulo{
+            font-family: sans-serif;
+        }
+        input{
+          position:relative;
+          margin-top: 20px;
+          background-color:#ff6969;
+          border-radius:5px;
+          color: white;
+
         }
     </style>
 </head>
@@ -32,12 +44,13 @@ mysqli_select_db($conn, $database);
 $nombre = $_POST['nombre1'];
 $contra = $_POST['contra'];
 
-//Check connection
+/*Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }elseif ($conn){
   echo "Connected successfully <br/>";
 }
+*/
 //Consulta
 
 $consulta= "SELECT * FROM gente where nombre = '$nombre'";
@@ -51,20 +64,23 @@ $contraDB = $final['passwd'];
 
 
 if($nombre == '' || $contra == ''){
-  echo "Usuario o contraseña incorrectos.<br>";
+  echo "Usuario o contraseña incorrectos.<br><br/>";
   echo "<a href = 'formulario.php'>Volver a intentar</a>";
   die();
   
 }elseif ($nombre == $usuarioDB && $contra == $contraDB){
-echo "<h2>Bienvenido $usuarioDB </h2><br/>";
-echo "<img src='imagenes/naruto.gif'>";
-}
-
-$_SESSION['usuario'] = $usuarioDB;
+  $_SESSION['usuario'] = $usuarioDB;
+  echo "<div class='titulo'> <h2>Bienvenido $usuarioDB </h2><br/></div>";
 ?>
-<br/><a href="berga.php"> cerrar sesion </a>
-<?php
 
+<img src='imagenes/naruto.gif'>
+<br/>
+<div class="csesion">
+<form action="berga.php">
+      <input type="Submit" value="Cerrar sesion">
+</form></div>
+<?php
+}
 
 mysqli_close($conn);
 ?> 
