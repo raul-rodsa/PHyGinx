@@ -86,10 +86,15 @@ $verificado = password_verify($contra,$contraDB);
 //Comprobación del login: 
 
 if($nombre == '' || $contra == ''){
-  echo "Usuario o contraseña incorrectos.<br><br/>";
+  echo "Usuario o contraseña vacíos.<br><br/>";
   echo "<a href = 'formulario.php'>Volver a intentar</a>";
   die();
   
+}elseif(!$usuarioDB || !$verificado ){
+  echo "Usuario o contraseña incorrectos.<br><br/>";
+  echo "<a href = 'formulario.php'>Volver a intentar</a>";
+  die();
+
 }elseif ($nombre == $usuarioDB && $verificado ){
 
   $_SESSION['usuario'] = $usuarioDB;
