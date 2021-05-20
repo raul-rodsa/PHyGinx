@@ -93,7 +93,7 @@ if($nombre == '' || $contra == ''){
 }elseif ($nombre == $usuarioDB && $verificado ){
 
   $_SESSION['usuario'] = $usuarioDB;
-  echo "<div class='titulo'> <h2>Bienvenido $usuarioDB </h2></div>";
+  echo "<div class='titulo'> <h2>Bienvenido $usuarioDB!! </h2></div>";
 ?>
 
 <img src='imagenes/naruto.gif'>
